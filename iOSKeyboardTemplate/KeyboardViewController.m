@@ -13,16 +13,9 @@
     
 }
 
-//keyboard rows
-@property (nonatomic, weak) IBOutlet UIView *numbersRow1View;
-@property (nonatomic, weak) IBOutlet UIView *numbersRow2View;
-@property (nonatomic, weak) IBOutlet UIView *symbolsRow1View;
-@property (nonatomic, weak) IBOutlet UIView *symbolsRow2View;
-@property (nonatomic, weak) IBOutlet UIView *numbersSymbolsRow3View;
 
 //keys
 @property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *letterButtonsArray;
-@property (nonatomic, weak) IBOutlet UIButton *switchModeRow3Button;
 @property (nonatomic, weak) IBOutlet UIButton *switchModeRow4Button;
 @property (nonatomic, weak) IBOutlet UIButton *shiftButton;
 @property (nonatomic, weak) IBOutlet UIButton *spaceButton;
@@ -112,12 +105,6 @@
 
 }
 
--(IBAction) backspaceKeyPressed: (UIButton*) sender {
-    
-    [self.textDocumentProxy deleteBackward];
-}
-
-
 
 -(IBAction) spaceKeyPressed: (UIButton*) sender {
     
@@ -143,16 +130,6 @@
     
     [self.textDocumentProxy insertText:@"\n"];
 }
-
-
--(IBAction) shiftKeyPressed: (UIButton*) sender {
-    
-    //if shift is on or in caps lock mode, turn it off. Otherwise, turn it on
-    _shiftStatus = _shiftStatus > 0 ? 0 : 1;
-    
-    [self shiftKeys];
-}
-
 
 
 -(void) shiftKeyDoubleTapped: (UIButton*) sender {
@@ -190,7 +167,7 @@
 
 
 - (IBAction) switchKeyboardMode:(UIButton*)sender {
-    
+    /*
     self.numbersRow1View.hidden = YES;
     self.numbersRow2View.hidden = YES;
     self.symbolsRow1View.hidden = YES;
@@ -237,6 +214,8 @@
             self.switchModeRow4Button.tag = 1;
             break;
     }
+     */
+     
     
 }
 
